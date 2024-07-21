@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { makeId } from '~/utils/string';
+import { makeId } from '@utils/string';
 
 interface IAction<T> {
   item?: Partial<T>;

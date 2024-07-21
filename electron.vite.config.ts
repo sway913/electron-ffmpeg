@@ -19,7 +19,6 @@ export default defineConfig({
         "@interfaces": resolve("src/interfaces"),
         "@main": resolve("src/main"),
         "@preload": resolve("src/preload"),
-        "~": resolve("src"),
       },
     },
     build: {
@@ -30,6 +29,13 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()],
     build: {
       minify: "esbuild",
+    },
+    resolve: {
+      alias: {
+        "@constants": resolve("src/constants"),
+        "@common": resolve("src/common"),
+        "@utils": resolve("src/utils"),
+      },
     },
   },
   renderer: {

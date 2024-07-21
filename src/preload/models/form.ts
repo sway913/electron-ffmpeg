@@ -4,7 +4,7 @@ import { ipcRenderer } from "electron"
 
 import { formFieldFilters } from "../constants"
 import { isVisible, searchElements } from "../utils"
-import { getFormFillValue } from "~/utils/form-fill"
+import { getFormFillValue } from "@utils/form-fill"
 import { IFormFillData } from "@interfaces/index"
 import AutoComplete from "./auto-complete"
 import { windowId } from ".."
