@@ -1,0 +1,37 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/renderer/*.d.ts",
+    "src/renderer/**/*",
+    "src/renderer/**/*.tsx",
+    "src/preload/*.d.ts", 
+    "typings/electronPreLoad.d.ts",
+    "typings/env.d.ts",
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strictNullChecks": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": [
+        "src/renderer/*"
+      ],
+      "@siteMain/*": [
+        "src/renderer/siteMain/src/*"
+      ],
+      "@siteAssistOpaque/*": [
+        "src/renderer/siteAssistOpaque/src/*"
+      ],
+      "@siteAssistTransprent/*": [
+        "src/renderer/siteAssistTransprent/src/*"
+      ],
+      "@siteElectronLoading/*": [
+        "src/renderer/siteElectronLoading/src"
+      ],
+    }
+  }
+}
