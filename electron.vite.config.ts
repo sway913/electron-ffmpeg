@@ -42,9 +42,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@renderer": resolve("src/renderer"),
-        "@interfaces": resolve("src/interfaces"),
-        "@siteMain": resolve("src/renderer/siteMain/src"),
-        "~": resolve("src"),
+        "@common": resolve("src/common"),
       },
     },
     plugins: [

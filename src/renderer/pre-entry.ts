@@ -1,2 +1,2 @@
-import { configureRenderer } from '../common/renderer-config';
+import { configureRenderer } from '@common/renderer-config';
 configureRenderer();

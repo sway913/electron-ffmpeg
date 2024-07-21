@@ -9,7 +9,6 @@
     "src/constants/**/*",
     "src/common/**/*",
     "src/preload/**/*",
-    "typings/electron.d.ts"
   ],
   "compilerOptions": {
     "composite": true,

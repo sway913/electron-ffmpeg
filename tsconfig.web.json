@@ -1,13 +1,8 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "include": [
-    "src/common/**/*",
-    "src/constants/**/*",
-    "src/interfaces/**/*",
-    "src/utils/**/*",
     "src/renderer/**/*",
-    "typings/electronPreLoad.d.ts",
-    "typings/env.d.ts",
+    "src/common/**/*",
   ],
   "compilerOptions": {
     "composite": true,
@@ -21,16 +16,9 @@
       "@renderer/*": [
         "src/renderer/*"
       ],
-      "@constants/*": [
-        "src/constants/*"
+      "@common/*": [
+        "src/common/*"
       ],
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@siteMain/*": [
-        "src/renderer/siteMain/src/*"
-      ],
-      
     }
   }
 }
