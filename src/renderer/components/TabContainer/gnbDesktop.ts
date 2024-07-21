@@ -34,6 +34,7 @@ export async function switchTabOnWindow(id: number): Promise<any> {
  * @param url URL
  */
 export async function createTabOnWindow(url: string): Promise<any> {
+  debugger
   window.$gnb.$desktop({ type: "createTabOnWindow", data: { url: url } })
 }
 

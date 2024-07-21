@@ -6,6 +6,11 @@ import { showCustomMenu } from "@main/plugin/modules/MenuManger"
 import { InjectData } from "@main/utils/inject"
 import { getSystemInfo } from "@main/utils/systemHelper"
 
+
+import { getPreloadPath, getSendEventJS, handleOpenWindow, startDevToolsIfNeed } from "./container/web"
+import { GNBEventBus } from "./container/event-bus"
+import { eventKey } from "./utils/const"
+
 let mainWindow: BrowserWindow
 export enum START_STATUS {
   pending = "pending",
@@ -77,7 +82,38 @@ export async function createMainWin(): Promise<BrowserWindow> {
     mainWindow.show()
   })
   return mainWindow
-  // initWinUrl(mainWindow, "/siteMain/index.html");
+}
+
+export async function createMainWin1(): Promise<BrowserWindow> {
+  mainWindow = await createWin({
+    config: {
+      width: 1200,
+      height: 720,
+      show: false,
+      minWidth: 800,
+      minHeight: 600,
+      autoHideMenuBar: true,
+      frame: false,
+      ...(process.platform === "linux" ? { icon } : {}),
+    },
+    url: "/siteMain/index.html",
+  })
+
+  const handler = (data: any) => {
+    mainWindow.webContents?.executeJavaScript(getSendEventJS(eventKey, data))
+  }
+  GNBEventBus.shared.subscribe(handler)
+
+  handleOpenWindow(mainWindow.webContents)
+
+  startDevToolsIfNeed(mainWindow.webContents)
+
+  mainWindow["customId"] = "main"
+  mainWindow.on("ready-to-show", () => {
+    showCustomMenu(mainWindow)
+    mainWindow.show()
+  })
+  return mainWindow
 }
 
 export function mainLogSend(data) {

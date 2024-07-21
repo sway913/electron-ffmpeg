@@ -11,6 +11,8 @@ import {
   switchTabOnWindow,
 } from "@renderer/components/TabContainer/gnbDesktop"
 
+debugger;
+
 GNBEventManager.shared.register()
 
 console.log("tabs main start")
