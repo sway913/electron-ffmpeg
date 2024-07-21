@@ -27,4 +27,6 @@ if (process.contextIsolated) {
   window.ipcOn = electronAPI.ipcRenderer.on
   // @ts-ignore (define in dts)
   window.ipcInvoke = electronAPI.ipcRenderer.invoke
+  // @ts-ignore (define in dts)
+  window.$gnb = { $desktop: ({ type, data }) => electronAPI.ipcRenderer.invoke("desktop:service", { type, data }), }
 }

@@ -1,4 +1,4 @@
-import { GNBEventManager } from "./event-manager"
+import { GNBEventManager } from "./eventManager"
 
 declare global {
   interface Window {
