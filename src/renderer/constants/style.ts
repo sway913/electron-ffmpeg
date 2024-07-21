@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { centerIcon, body2 } from '~/renderer/mixins';
+import { centerIcon, body2 } from '@renderer/mixins';
 import { ITheme } from '@interfaces/index';
-import { DialogStyle } from '~/renderer/mixins/dialogs';
+import { DialogStyle } from '@renderer/mixins/dialogs';
 import { TOOLBAR_HEIGHT } from '@constants/design';
 
 export const StyledApp = styled(DialogStyle)`

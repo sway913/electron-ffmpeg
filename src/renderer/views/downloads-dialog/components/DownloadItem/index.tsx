@@ -13,7 +13,7 @@ import {
 } from './style';
 import { IDownloadItem } from '@interfaces/index';
 import prettyBytes from 'pretty-bytes';
-const { shell } = require('electron');
+const { shell } = import('electron');
 import store from '../../store';
 import { DownloadItemMenu } from '../DownloadItemMenu';
 

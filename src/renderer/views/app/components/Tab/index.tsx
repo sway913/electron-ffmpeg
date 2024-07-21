@@ -109,7 +109,7 @@ const onContextMenu = (tab: ITab) => () => {
     .getGroups()
     .filter((t) => t.id !== tab.tabGroupId);
 
-  const menu = require('@electron/remote').Menu.buildFromTemplate([
+  const menu = import('@electron/remote').Menu.buildFromTemplate([
     {
       label: 'New tab to the right',
       click: () => {
@@ -231,7 +231,7 @@ const addTabToNewGroup = (tab: ITab): void => {
 };
 
 const tabGroupSubmenu = (tab: ITab, tabGroups: ITabGroup[]): Menu => {
-  return require('@electron/remote').Menu.buildFromTemplate([
+  return import('@electron/remote').Menu.buildFromTemplate([
     {
       label: 'New group',
       click: () => {

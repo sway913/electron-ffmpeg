@@ -1,10 +1,11 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "include": [
-    "src/renderer/*.d.ts",
+    "src/common/**/*",
+    "src/constants/**/*",
+    "src/interfaces/**/*",
+    "src/utils/**/*",
     "src/renderer/**/*",
-    "src/renderer/**/*.tsx",
-    "src/preload/*.d.ts", 
     "typings/electronPreLoad.d.ts",
     "typings/env.d.ts",
   ],
@@ -20,18 +21,16 @@
       "@renderer/*": [
         "src/renderer/*"
       ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
       "@siteMain/*": [
         "src/renderer/siteMain/src/*"
       ],
-      "@siteAssistOpaque/*": [
-        "src/renderer/siteAssistOpaque/src/*"
-      ],
-      "@siteAssistTransprent/*": [
-        "src/renderer/siteAssistTransprent/src/*"
-      ],
-      "@siteElectronLoading/*": [
-        "src/renderer/siteElectronLoading/src"
-      ],
+      
     }
   }
 }

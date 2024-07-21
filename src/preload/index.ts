@@ -3,7 +3,7 @@
 import { app, ipcRenderer, webFrame } from 'electron';
 
 import AutoComplete from './models/auto-complete';
-import { getTheme } from '~/utils/themes';
+import { getTheme } from '@utils/themes';
 import { ERROR_PROTOCOL, WEBUI_BASE_URL } from '@constants/files';
 import { injectChromeWebstoreInstallButton } from './chrome-webstore';
 import { contextBridge } from 'electron';
@@ -35,14 +35,14 @@ window.addEventListener('mouseup', async (e) => {
   }
 });
 
-let beginningScrollLeft: number = null;
-let beginningScrollRight: number = null;
+let beginningScrollLeft: number = 0;
+let beginningScrollRight: number = 0;
 let horizontalMouseMove = 0;
 let verticalMouseMove = 0;
 
 const resetCounters = () => {
-  beginningScrollLeft = null;
-  beginningScrollRight = null;
+  beginningScrollLeft = 0;
+  beginningScrollRight = 0;
   horizontalMouseMove = 0;
   verticalMouseMove = 0;
 };

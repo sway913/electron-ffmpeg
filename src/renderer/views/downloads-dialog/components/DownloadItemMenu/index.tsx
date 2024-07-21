@@ -36,7 +36,7 @@ const toggleOpenWhenDone =
 
 const showInFolder =
   (item: IDownloadItem) => (e: React.MouseEvent<HTMLDivElement>) => {
-    require('@electron/remote').shell.showItemInFolder(item.savePath);
+    import('@electron/remote').shell.showItemInFolder(item.savePath);
     store.closeAllDownloadMenu();
     e.stopPropagation();
   };
@@ -82,8 +82,8 @@ const trashDownload =
         console.log('Downloaded item has been deleted successfully.');
       })
       .catch((err) => {
-        const window = require('@electron/remote').getCurrentWindow();
-        const dialog = require('@electron/remote').dialog;
+        const window = import('@electron/remote').getCurrentWindow();
+        const dialog = import('@electron/remote').dialog;
         dialog.showMessageBox(window, {
           title: "Couldn't Delete File",
           buttons: ['cancel'],

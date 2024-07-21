@@ -43,7 +43,7 @@ export class AppWindow {
       ),
       show: false,
     });
-    require('@electron/remote/main').enable(this.win.webContents);
+    import('@electron/remote/main').enable(this.win.webContents);
     this.incognito = incognito;
 
     this.viewManager = new ViewManager(this, incognito);

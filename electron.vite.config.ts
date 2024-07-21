@@ -19,6 +19,7 @@ export default defineConfig({
         "@interfaces": resolve("src/interfaces"),
         "@main": resolve("src/main"),
         "@preload": resolve("src/preload"),
+        "~": resolve("src"),
       },
     },
     build: {
@@ -35,7 +36,9 @@ export default defineConfig({
     resolve: {
       alias: {
         "@renderer": resolve("src/renderer"),
+        "@interfaces": resolve("src/interfaces"),
         "@siteMain": resolve("src/renderer/siteMain/src"),
+        "~": resolve("src"),
       },
     },
     plugins: [

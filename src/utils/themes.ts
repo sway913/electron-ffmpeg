@@ -1,4 +1,4 @@
-import { lightTheme, darkTheme } from '~/renderer/constants/themes';
+import { lightTheme, darkTheme } from '../renderer/constants/themes';
 
 export const getTheme = (name: string) => {
   if (name === 'ironiumstudios-light') return lightTheme;
