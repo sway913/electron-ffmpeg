@@ -14,22 +14,23 @@ const addSubModel = () => {
 app.whenReady().then(async () => {
   console.log("electron whenReady")
   electronApp.setAppUserModelId("com.electron")
-  // DesktopService.shared.init()
-  // createWindow()
-  app.on("browser-window-created", (_, window) => {
-    console.log("browser-window-created")
-  })
+  DesktopService.shared.init()
+  createWindow()
+  // app.on("browser-window-created", (_, window) => {
+  //   console.log("watchWindowShortcuts created")
+  //   optimizer.watchWindowShortcuts(window)
+  // })
 
-  createMainWin().then((win) => {
-    win.on("show", addSubModel)
-  })
-  app.on("activate", async function () {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createMainWin().then((win) => {
-        addSubModel()
-      })
-    }
-  })
+  // createMainWin().then((win) => {
+  //   win.on("show", addSubModel)
+  // })
+  // app.on("activate", async function () {
+  //   if (BrowserWindow.getAllWindows().length === 0) {
+  //     createMainWin().then((win) => {
+  //       addSubModel()
+  //     })
+  //   }
+  // })
 })
 
 app.on("window-all-closed", () => {

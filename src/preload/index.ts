@@ -1,6 +1,7 @@
 import { contextBridge, BrowserWindow, ipcRenderer } from "electron"
 import { electronAPI } from "@electron-toolkit/preload"
 
+console.log("preload")
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
 // just add to the DOM global.
@@ -11,6 +12,9 @@ if (process.contextIsolated) {
     contextBridge.exposeInMainWorld("ipcOn", electronAPI.ipcRenderer.on)
     contextBridge.exposeInMainWorld("ipcInvoke", electronAPI.ipcRenderer.invoke)
     // contextBridge.exposeInMainWorld("api", api);
+    contextBridge.exposeInMainWorld("$gnb", {
+      $desktop: ({ type, data }) => electronAPI.ipcRenderer.invoke("desktop:service", { type, data }),
+    })
   } catch (error) {
     console.error(error)
   }

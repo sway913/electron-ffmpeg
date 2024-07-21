@@ -22,7 +22,7 @@ export const getSendEventJS = (eventName: string, eventData: any) => {
  * 获取 preload 路径
  */
 export function getPreloadPath(): string {
-  return path.join(__dirname, "preload.js")
+  return path.join(__dirname, "../preload", "index.js")
 }
 
 /**
