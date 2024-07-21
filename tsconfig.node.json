@@ -3,6 +3,11 @@
   "include": [
     "electron.vite.config.*",
     "src/main/**/*",
+    "src/utils/**/*",
+    "src/models/**/*",
+    "src/interfaces/**/*",
+    "src/constants/**/*",
+    "src/common/**/*",
     "src/preload/**/*",
     "typings/electron.d.ts"
   ],
@@ -17,6 +22,21 @@
     "paths": {
       "@main/*": [
         "src/main/*", 
+      ],
+      "@constants/*": [
+        "src/constants/*", 
+      ],
+      "@common/*": [
+        "src/common/*", 
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*", 
+      ],
+      "@models/*": [
+        "src/models/*", 
+      ],
+      "@utils/*": [
+        "src/utils/*", 
       ],
       "@preload/*":[
         "src/preload/*"

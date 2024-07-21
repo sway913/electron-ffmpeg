@@ -13,6 +13,10 @@ export default defineConfig({
     resolve: {
       alias: {
         "@resources": resolve("resources"),
+        "@constants": resolve("src/constants"),
+        "@common": resolve("src/common"),
+        "@utils": resolve("src/utils"),
+        "@interfaces": resolve("src/interfaces"),
         "@main": resolve("src/main"),
         "@preload": resolve("src/preload"),
       },

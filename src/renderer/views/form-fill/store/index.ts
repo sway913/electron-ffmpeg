@@ -1,0 +1,23 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
+import { ipcRenderer } from 'electron';
+import { makeObservable, observable } from 'mobx';
+
+import { IFormFillMenuItem } from '@interfaces/index';
+import { DialogStore } from '~/models/dialog-store';
+
+export class Store extends DialogStore {
+  public items: IFormFillMenuItem[] = [];
+
+  public constructor() {
+    super({ hideOnBlur: false });
+
+    makeObservable({ items: observable });
+
+    ipcRenderer.on(`formfill-get-items`, (e, items) => {
+      this.items = items;
+    });
+  }
+}
+
+export default new Store();
